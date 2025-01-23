@@ -1,16 +1,16 @@
 {
-    "IndexPage": {
-      "title": "Exemple next-intl",
-      "description": "Bienvenue dans l'exemple d'internationalisation (i18n) de Next.js! Cette démo met en avant la puissance du routeur de l'application et comment gérer du contenu multilingue de manière transparente en utilisant next-intl."
-    },
-    "NotFoundPage": {
-      "title": "Page non trouvée",
-      "description": "Oups! Il semble que vous soyez tombé sur une page qui n'existe pas. Ne vous inquiétez pas, notre magie d'internationalisation est toujours à l'œuvre sur d'autres parties de l'application. N'hésitez pas à naviguer en arrière pour explorer davantage!"
-    },
-    "Navigation": {
-      "home": "Accueil"
-    },
-    "Footer": {
-        "copyright": "© 2024 Votre application. Tous droits réservés."
-    }
+  "IndexPage": {
+    "title": "Magasin de Golf",
+    "description": "Bienvenue dans le Magasin de Golf."
+  },
+  "NotFoundPage": {
+    "title": "Page Non Trouvée",
+    "description": "Oups ! Il semble que vous soyez tombé sur une page qui n'existe pas."
+  },
+  "Navigation": {
+    "home": "Accueil"
+  },
+  "Footer": {
+    "copyright": "© 2025 Magasin de Golf. Tous droits réservés."
+  }
 }
