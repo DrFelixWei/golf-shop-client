@@ -26,6 +26,7 @@ export default async function RootLayout({
   params,
 }: Readonly<RootLayoutProps>) {
 
+  // @ts-ignore
   const { locale } = await params;
 
   return (
