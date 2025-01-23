@@ -16,18 +16,15 @@ const tabIcon = "/icons/golf_club.svg";
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  params: Promise<{ locale: string }> | undefined; // Align with Next.js expectations
 }
 
 export default async function RootLayout({
   children,
   params,
 }: Readonly<RootLayoutProps>) {
-
-  // @ts-expect-error params might not be a promise, but TypeScript expects one
-  const { locale } = await params;
+  const resolvedParams = params ? await params : { locale: 'en' }; // Default to 'en' if params is undefined
+  const { locale } = resolvedParams;
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -36,15 +33,13 @@ export default async function RootLayout({
       </head>
 
       <body className={inter.className}>
-
-      <NextIntlClientProvider locale={locale}>
-        <div className='flex flex-col min-h-screen max-w-4xl mx-auto'>
-          <Header />
-          <div className='flex-grow mt-20'>{children}</div>
-          <Footer />
-        </div>
-      </NextIntlClientProvider>
-
+        <NextIntlClientProvider locale={locale}>
+          <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
+            <Header />
+            <div className="flex-grow mt-20">{children}</div>
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
