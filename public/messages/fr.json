@@ -1,5 +1,5 @@
 {
-  "IndexPage": {
+  "Home": {
     "title": "Magasin de Golf",
     "description": "Bienvenue dans le Magasin de Golf."
   },
@@ -12,5 +12,10 @@
   },
   "Footer": {
     "copyright": "© 2025 Magasin de Golf. Tous droits réservés."
+  },
+  "Search": {
+      "search": "Rechercher",
+      "searchPlaceholder": "Tapez votre requête...",
+      "searchButton": "Rechercher"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "IndexPage": {
+  "Home": {
     "title": "Golf Shop",
     "description": "Welcome to the Golf Shop."
   },
@@ -12,5 +12,10 @@
   },
   "Footer": {
     "copyright": "© 2025 Golf Shop. All rights reserved."
+  },
+  "Search": {
+    "search": "Search",
+    "searchPlaceholder": "Type your query...",
+    "searchButton": "Search"
   }
 }
