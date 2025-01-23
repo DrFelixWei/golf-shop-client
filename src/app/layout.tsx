@@ -23,7 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en' suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/Icon_GolfClub.svg" type="image/svg+xml" /> 
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
