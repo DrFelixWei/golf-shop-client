@@ -26,7 +26,7 @@ export default async function RootLayout({
   params,
 }: Readonly<RootLayoutProps>) {
 
-  // @ts-expect-error
+  // @ts-expect-error params might not be a promise, but TypeScript expects one
   const { locale } = await params;
 
   return (
