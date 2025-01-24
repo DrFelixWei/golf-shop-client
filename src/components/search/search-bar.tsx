@@ -1,14 +1,54 @@
-import { useTranslations } from 'next-intl';
-import InteractiveSearchBar from './interactive-search-bar';
+"use client";
 
-export default function SearchBar() {
-  const t = useTranslations('Search');
+import React, { useState, useEffect } from 'react';
+import { Box, TextField } from '@mui/material';
+
+interface SearchBarProps {
+  placeholder: string;
+  updateSearchQuery: (newValue: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  placeholder,
+  updateSearchQuery,
+}) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    if (searchQuery.trim() !== '') {
+      console.log('User searched for:', searchQuery);
+      updateSearchQuery(searchQuery)
+    }
+  };
+
+  useEffect(() => {
+    // updateSearchQuery(searchQuery)
+  }, [searchQuery]); 
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
-    <div>
-      <InteractiveSearchBar
-        placeholder={t('search')}
+    <Box
+      display="flex"
+      alignItems="center"
+      gap={2}
+      sx={{ marginTop: 2, width: '100%' }}
+    >
+      <TextField
+        label={placeholder}
+        variant="outlined"
+        fullWidth
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyPress={handleKeyPress}
+        data-testid="search-input"
       />
-    </div>
+    </Box>
   );
-}
+};
+
+export default SearchBar;
