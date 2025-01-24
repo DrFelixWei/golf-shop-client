@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import SearchPage from "./search"
+import SearchBar from "@/components/search-bar"
 
 export default function Home() {
   const t = useTranslations('Home');
@@ -10,7 +10,7 @@ export default function Home() {
       <p>{t('description')}</p>
 
 
-      <SearchPage/>
+      <SearchBar/>
 
 
 
