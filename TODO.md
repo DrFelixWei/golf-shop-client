@@ -1,5 +1,3 @@
-- Add top navbar 
-- Add a dynamic banner to the top of the home page
 - Add search bar and search results grid to front page
-- Add language localization
+- Add a dynamic banner to the top of the home page
 - Add dark/light mode toggle

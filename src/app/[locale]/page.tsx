@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import SearchBar from "@/components/search-bar"
+import SearchBar from "@/components/search/search-bar"
 
 export default function Home() {
   const t = useTranslations('Home');
