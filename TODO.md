@@ -1,6 +1,4 @@
-- Add top navbar 
 - Add a dynamic banner to the top of the home page
-- Add search bar and search results grid to front page
-- Add language localization
 - Add dark/light mode toggle
 - Add UI for products to show if on sale/special price
+- Add lazy loading / infinite scrolling for search results
