@@ -12,5 +12,9 @@
   },
   "Footer": {
     "copyright": "© 2025 Golf Shop. All rights reserved."
+  },
+  "Search": {
+    "label": "Search",
+    "placeholder": "Search for a product"
   }
 }

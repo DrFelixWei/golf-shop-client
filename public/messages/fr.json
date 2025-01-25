@@ -12,5 +12,9 @@
   },
   "Footer": {
     "copyright": "© 2025 Magasin de Golf. Tous droits réservés."
+  },
+  "Search": {
+    "label": "Recherche",
+    "placeholder": "Rechercher un produit"
   }
 }
