@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import SearchBar from './search-bar';
+import { Product } from './types'
+import data from './dummy-data.json'
+import SearchResults from './search-results';
 
 interface SearchStateProps {
   translations: any  // is an object containing strings for translations
@@ -12,10 +15,19 @@ const SearchState: React.FC<SearchStateProps> = ({
 }) => {
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState(null)
+  const [searchResults, setSearchResults] = useState<Product[]>([])
+
+  // Loading in dummy data
+  useEffect(() => {
+    setSearchResults(data.products)
+  }, []); 
 
   const submitSearch = () => {
     // call the api
+
+    // with dummy data just randomize the order
+    const shuffledResults = [...searchResults].sort(() => Math.random() - 0.5);
+    setSearchResults(shuffledResults);
   }
 
   return (
@@ -27,6 +39,9 @@ const SearchState: React.FC<SearchStateProps> = ({
         submitSearch={submitSearch}
       />
 
+      <SearchResults
+        results={searchResults}
+      />
 
     </div>
   );

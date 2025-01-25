@@ -1,0 +1,53 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Golf Driver",
+        "price": 299.99,
+        "imageUrl": "./dummy-products/golf-driver.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Golf Putter",
+        "price": 149.99,
+        "imageUrl": "./dummy-products/golf-putter.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Golf Irons Set",
+        "price": 499.99,
+        "imageUrl": "./dummy-products/golf-irons-set.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Golf Bag",
+        "price": 99.99,
+        "imageUrl": "./dummy-products/golf-bag.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Golf Shoes",
+        "price": 129.99,
+        "imageUrl": "./dummy-products/golf-shoes.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Golf Balls (Pack of 12)",
+        "price": 19.99,
+        "imageUrl": "./dummy-products/golf-balls.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Golf Tees (Pack of 100)",
+        "price": 7.99,
+        "imageUrl": "./dummy-products/golf-tees.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Golf Rangefinder",
+        "price": 249.99,
+        "imageUrl": "./dummy-products/golf-rangefinder.jpg"
+      }
+    ]
+  }
+  
