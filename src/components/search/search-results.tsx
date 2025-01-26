@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SearchResultItem from './search-result-item';
 import { Product } from './types'
 
@@ -20,8 +20,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         gap: '20px',
       }}
     >
-      {results.map((result: any) => (
+      {results.map((result: Product) => (
         <SearchResultItem
+            key={result.id}
             item={result}
         />
       ))}

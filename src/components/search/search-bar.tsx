@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Box, TextField } from '@mui/material';
 
 interface SearchBarProps {
-  translations: any  // is an object containing strings for translations
+  translations: Record<string, string>;
   searchQuery: string
   setSearchQuery: (newValue: string) => void
   submitSearch: () => void

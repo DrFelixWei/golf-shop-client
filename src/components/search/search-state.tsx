@@ -7,7 +7,7 @@ import data from './dummy-data.json'
 import SearchResults from './search-results';
 
 interface SearchStateProps {
-  translations: any  // is an object containing strings for translations
+  translations: Record<string, string>;
 }
 
 const SearchState: React.FC<SearchStateProps> = ({
