@@ -4,14 +4,17 @@ import { useState } from 'react';
 
 export default function Banner() {
   const [isVisible, setIsVisible] = useState(true);
-  const bannerURL = "./banner/driver_slow.gif";
+  const bannerURL = "./banner/rick_shiels_cut_slowed.gif";
 
   const handleClose = () => {
     setIsVisible(false);
   };
 
+
+
   return (
     isVisible && (
+      <>
       <div className="banner-container">
         <div className="banner">
           <img src={bannerURL} alt="Banner Gif" className="banner-gif" />
@@ -20,6 +23,10 @@ export default function Banner() {
           </button>
         </div>
       </div>
+
+      <div className="banner-displacement">
+      </div>
+      </>
     )
   );
 }
