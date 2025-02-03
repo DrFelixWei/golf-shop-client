@@ -24,8 +24,8 @@ export default function LocalSwitcher() {
         onChange={onSelectChange}
         disabled={isPending}
       >
-        <option value='en'>English</option>
-        <option value='fr'>French</option>
+        <option value='en'>EN</option>
+        <option value='fr'>FR</option>
       </select>
     </label>
   );

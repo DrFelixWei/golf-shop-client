@@ -1,4 +1,6 @@
-- Add a dynamic banner to the top of the home page
-- Add dark/light mode toggle
+- Add shopping-cart page
+- Add click to add product to shopping cart and popup indicator confirmation
+- Add payment UI
+- Add search result order filter
 - Add UI for products to show if on sale/special price
 - Add lazy loading / infinite scrolling for search results

@@ -39,6 +39,8 @@ const SearchState: React.FC<SearchStateProps> = ({
         submitSearch={submitSearch}
       />
 
+      <br/>
+
       <SearchResults
         results={searchResults}
       />
