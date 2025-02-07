@@ -1,5 +1,0 @@
-- Add login portal
-- Add payment UI
-- Add search result order filter
-- Add UI for products to show if on sale/special price
-- Add lazy loading / infinite scrolling for search results
