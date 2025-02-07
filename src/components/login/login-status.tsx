@@ -10,7 +10,7 @@ export default function LoginStatus() {
       { isLoggedIn &&
         <p>{t('greetingUser')}</p>
       }
-      { isLoggedIn &&
+      { !isLoggedIn &&
         <p>{t('greetingGuest')}</p>
       }
     </label>
