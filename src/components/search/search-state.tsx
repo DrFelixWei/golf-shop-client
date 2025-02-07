@@ -42,6 +42,7 @@ const SearchState: React.FC<SearchStateProps> = ({
       <br/>
 
       <SearchResults
+        translations={translations}
         results={searchResults}
       />
 

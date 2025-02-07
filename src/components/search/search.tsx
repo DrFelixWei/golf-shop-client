@@ -10,6 +10,7 @@ export default function Search() {
           translations={{
             searchLabel: t('label'), 
             placeholder: t('placeholder'), 
+            addToCart: t('addToCart'),
           }}
       />
 

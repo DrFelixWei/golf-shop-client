@@ -8,13 +8,26 @@
     "description": "Oops! It seems like you've stumbled upon a page that doesn't exist."
   },
   "Navigation": {
-    "home": "Home"
+    "home": "Home",
+    "cart": "Cart"
   },
   "Footer": {
     "copyright": "© 2025 Golf Shop. All rights reserved."
   },
   "Search": {
     "label": "Search",
-    "placeholder": "Search for a product"
+    "placeholder": "Search for a product",
+    "addToCart": "Add To Cart"
+  },
+  "CartPage": {
+    "title": "My Shopping Cart",
+    "yourCart": "Your Cart",
+    "cartEmpty": "Your cart is empty.",
+    "checkout": "Proceed to Checkout",
+    "total": "Total"
+  },
+  "Login": {
+    "greetingGuest": "Hello, sign in",
+    "greetingUser": "Welcome back {name}!"
   }
 }

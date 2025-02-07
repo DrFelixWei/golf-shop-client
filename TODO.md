@@ -1,5 +1,4 @@
-- Add shopping-cart page
-- Add click to add product to shopping cart and popup indicator confirmation
+- Add login portal
 - Add payment UI
 - Add search result order filter
 - Add UI for products to show if on sale/special price

@@ -8,13 +8,26 @@
     "description": "Oups ! Il semble que vous soyez tombé sur une page qui n'existe pas."
   },
   "Navigation": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "cart": "Panier"
   },
   "Footer": {
     "copyright": "© 2025 Magasin de Golf. Tous droits réservés."
   },
   "Search": {
     "label": "Recherche",
-    "placeholder": "Rechercher un produit"
+    "placeholder": "Rechercher un produit",
+    "addToCart": "Ajouter au panier"
+  },
+  "CartPage": {
+    "title": "Mon Panier",
+    "yourCart": "Votre Panier",
+    "cartEmpty": "Votre panier est vide.",
+    "checkout": "Passer à la Caisse",
+    "total": "Totale"
+  },
+  "Login": {
+    "greetingGuest": "Bonjour, connectez-vous",
+    "greetingUser": "Bon retour {name}!"
   }
 }

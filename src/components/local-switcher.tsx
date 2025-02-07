@@ -11,13 +11,20 @@ export default function LocalSwitcher() {
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;
+    const currentPath = window.location.pathname; // Get the current path
+
+    // Find the path without the locale
+    const newPath = currentPath.replace(`/${localActive}`, '');
+
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      // Replace the current locale with the selected one, while keeping the path
+      router.replace(`/${nextLocale}${newPath}`);
     });
   };
+
   return (
     <label className='border-2 rounded'>
-      <p className='sr-only'>change language</p>
+      <p className='sr-only'>Change language</p>
       <select
         defaultValue={localActive}
         className='bg-transparent py-2'

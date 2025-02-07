@@ -6,10 +6,12 @@ import { Product } from './types'
 
 interface SearchResultsProps {
   results: Product[]
+  translations: Record<string, string>;
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({
-  results
+  results,
+  translations
 }) => {
 
   return (
@@ -24,6 +26,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         <SearchResultItem
             key={result.id}
             item={result}
+            translations={translations}
         />
       ))}
     </div>
