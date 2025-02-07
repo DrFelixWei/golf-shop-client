@@ -16,7 +16,7 @@ const SearchResultItem: React.FC<SearchItemProps> = ({
   const handleAddToCart = () => {
     const cartItems = JSON.parse(localStorage.getItem("cart-items") || "[]");
     // Find the item in the cart
-    const existingItemIndex = cartItems.findIndex((cartItem: any) => cartItem.id === item.id);
+    const existingItemIndex = cartItems.findIndex((cartItem: Product) => cartItem.id === item.id);
     if (existingItemIndex !== -1) {
       // Update the quantity of the existing item
       cartItems[existingItemIndex].quantity += 1;

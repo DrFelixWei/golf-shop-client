@@ -1,9 +1,7 @@
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl';
 
 export default function LoginForm() {
-  const t = useTranslations('Login');
-
-
+  // const t = useTranslations('Login');
   
   return (
     <>

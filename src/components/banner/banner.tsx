@@ -17,6 +17,7 @@ export default function Banner() {
       <>
         <div className={`banner-container ${isClosing ? "slideUp" : ""}`}>
           <div className="banner">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={bannerURL} alt="Banner Gif" className="banner-gif" />
             <button className="close-btn" onClick={handleClose}>
               X
