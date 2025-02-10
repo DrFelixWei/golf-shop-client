@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Box, Typography, IconButton, CardMedia } from "@mui/material";
+import { Button, Box, Typography, IconButton, CardMedia, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 
 interface CartItem {
@@ -18,11 +18,13 @@ interface CartItemsProps {
     cartEmpty: string;
     checkout: string;
     total: string;
+    checkoutUnavailable: string;
   };
 }
 
 export const CartItems: React.FC<CartItemsProps> = ({ translations }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [dialogOpen, setDialogOpen] = useState(false);  // State to control the dialog visibility
 
   // Fetch cart items from local storage on component mount
   useEffect(() => {
@@ -50,6 +52,16 @@ export const CartItems: React.FC<CartItemsProps> = ({ translations }) => {
   // Calculate the total price of items in the cart
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  // Function to handle the checkout button click
+  const handleCheckoutClick = () => {
+    setDialogOpen(true);  // Open the dialog on checkout button click
+  };
+
+  // Function to close the dialog
+  const handleDialogClose = () => {
+    setDialogOpen(false);
   };
 
   return (
@@ -132,10 +144,24 @@ export const CartItems: React.FC<CartItemsProps> = ({ translations }) => {
         <Typography variant="h6" sx={{ marginBottom: 2 }}>
           {translations.total}: ${calculateTotalPrice().toFixed(2)}
         </Typography>
-        <Button variant="contained" color="primary" sx={{ padding: "10px 20px" }}>
+        <Button variant="contained" color="primary" sx={{ padding: "10px 20px" }} onClick={handleCheckoutClick}>
           {translations.checkout}
         </Button>
       </Box>
+
+      {/* Dialog to show when the user clicks checkout */}
+      <Dialog open={dialogOpen} onClose={handleDialogClose}>
+        <DialogContent>
+          <Typography>
+            {translations.checkoutUnavailable}
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose} color="primary">
+            X
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

@@ -8,7 +8,8 @@ export default function CartPage() {
     yourCart: t('yourCart'),
     cartEmpty: t('cartEmpty'),
     checkout: t('checkout'),
-    total: t('total')
+    total: t('total'),
+    checkoutUnavailable: t('checkoutUnavailable'),
   };
 
   return (

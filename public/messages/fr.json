@@ -24,7 +24,8 @@
     "yourCart": "Votre Panier",
     "cartEmpty": "Votre panier est vide.",
     "checkout": "Passer à la Caisse",
-    "total": "Totale"
+    "total": "Totale",
+    "checkoutUnavailable": "Désolé ! Nous ne sommes pas encore prêts à accepter les commandes. Veuillez revenir plus tard."
   },
   "Login": {
     "greetingGuest": "Bonjour, connectez-vous",

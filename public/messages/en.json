@@ -24,7 +24,8 @@
     "yourCart": "Your Cart",
     "cartEmpty": "Your cart is empty.",
     "checkout": "Proceed to Checkout",
-    "total": "Total"
+    "total": "Total",
+    "checkoutUnavailable": "Sorry! We're not ready to accept orders yet. Please check back later."
   },
   "Login": {
     "greetingGuest": "Hello, sign in",
