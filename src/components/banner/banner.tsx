@@ -1,11 +1,21 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Banner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false); // Default to not visible
   const [isClosing, setIsClosing] = useState(false); 
   const bannerURL = "./banner/rick_shiels_cut_slowed.gif";
+
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0]; 
+    const lastVisited = localStorage.getItem("visited");
+
+    if (lastVisited !== today) {
+      setIsVisible(true); 
+      localStorage.setItem("visited", today); 
+    }
+  }, []);
 
   const handleClose = () => {
     setIsClosing(true);
