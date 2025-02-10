@@ -31,6 +31,7 @@ https://golf-shop-flix.netlify.app
 3. Add search result order filter
 4. Add UI for products to show if on sale/special price
 5. Add lazy loading / infinite scrolling for search results
+6. Add accessibiltiy feature like keyboard support or screen readers
 
 ## Contents of Folder
 -

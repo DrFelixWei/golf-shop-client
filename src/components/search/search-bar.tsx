@@ -1,13 +1,15 @@
-"use client"
+"use client";
 
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
+import ClearIcon from '@mui/icons-material/Clear';
 
 interface SearchBarProps {
   translations: Record<string, string>;
   searchQuery: string;
   setSearchQuery: (newValue: string) => void;
   submitSearch: () => void;
+  resetSearch: () => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -15,6 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   searchQuery,
   setSearchQuery,
   submitSearch,
+  resetSearch,
 }) => {
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -26,13 +29,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery(''); // Clear the search query
+    resetSearch(); // Reset the search results to show all products
+  };
+
   return (
     <div>
       <Box
         display="flex"
         alignItems="center"
         gap={2}
-        sx={{ marginTop: 2, width: '100%' }}
+        sx={{ marginTop: 2, width: '100%', position: 'relative' }} // Relative positioning
       >
         <input
           type="text"
@@ -49,9 +57,24 @@ const SearchBar: React.FC<SearchBarProps> = ({
             border: '1px solid #ccc',
             backgroundColor: 'var(--background)', 
             color: 'var(--foreground)', 
+            paddingRight: '30px', // Space for the "x" button
           }}
           data-testid="search-input"
         />
+        {searchQuery && (
+          <IconButton 
+            onClick={handleClearSearch} 
+            aria-label="clear search" 
+            sx={{
+              position: 'absolute', 
+              right: '8px', // Position inside the input field
+              top: '50%', 
+              transform: 'translateY(-50%)',
+            }}
+          >
+            <ClearIcon />
+          </IconButton>
+        )}
       </Box>
     </div>
   );
