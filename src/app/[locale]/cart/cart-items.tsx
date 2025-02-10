@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Box, Typography, IconButton, CardMedia, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Button, Box, Typography, IconButton, CardMedia, Dialog, DialogActions, DialogContent } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 
 interface CartItem {
