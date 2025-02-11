@@ -7,9 +7,10 @@ import CloseIcon from '@mui/icons-material/Close';
 interface LoginFormProps {
   translations: Record<string, string>;
   onClose: () => void;
+  onConfirm: (username: string) => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm }) => {
   const [isCreatingAccount, setIsCreatingAccount] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,6 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose }) => {
     if (user) {
       setSuccessMessage(translations.loginSuccess);
       setErrorMessage('');
+      onConfirm(user.name);
     } else {
       setErrorMessage(translations.invalidEmailPass);
     }

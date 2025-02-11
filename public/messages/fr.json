@@ -44,6 +44,7 @@
     "confirmPassword": "Confirmez le mot de passe",
     "forgotPassword": "Mot de passe oublié ?",
     "switchToLogin": "Vous avez déjà un compte ? Connectez-vous",
-    "switchToSignup": "Vous n'avez pas de compte ? Inscrivez-vous"
+    "switchToSignup": "Vous n'avez pas de compte ? Inscrivez-vous",
+    "logout": "Déconnexion"
   }
 }

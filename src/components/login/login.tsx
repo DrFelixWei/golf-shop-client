@@ -24,6 +24,7 @@ export default function Login() {
         duplicateEmail: t('duplicateEmail'),
         accountCreated: t('accountCreated'),
         forgotPassword: t('forgotPassword'),
+        logout: t('logout'),
       }}
     />
   );

@@ -44,6 +44,7 @@
     "confirmPassword": "Confirm Password",
     "forgotPassword": "Forgot password?",
     "switchToLogin" : "Already have an account? Login",
-    "switchToSignup" : "Don't have an account? Sign up"
+    "switchToSignup" : "Don't have an account? Sign up",
+    "logout" : "Logout"
   }
 }
