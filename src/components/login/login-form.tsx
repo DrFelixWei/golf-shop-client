@@ -64,12 +64,35 @@ const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm 
     localStorage.setItem('users', JSON.stringify(users));
 
     setSuccessMessage(translations.accountCreated);
+    onConfirm(name);
     setErrorMessage('');
     handleSwitchMode();
   };
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (isCreatingAccount) {
+      handleCreateAccount();
+    } else {
+      handleLogin();
+    }
+  };
+
   return (
-    <Box sx={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1300, backgroundColor: '#f9f9f9', padding: 4, borderRadius: 2, boxShadow: 24, maxWidth: 400 }}>
+    <Box
+      sx={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 1300,
+        backgroundColor: '#f9f9f9',
+        padding: 4,
+        borderRadius: 2,
+        boxShadow: 24,
+        maxWidth: 400,
+      }}
+    >
       <IconButton sx={{ position: 'absolute', top: 8, right: 8 }} onClick={onClose}>
         <CloseIcon />
       </IconButton>
@@ -79,51 +102,53 @@ const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm 
       {errorMessage && <Alert severity="error" sx={{ mb: 2 }}>{errorMessage}</Alert>}
       {successMessage && <Alert severity="success" sx={{ mb: 2 }}>{successMessage}</Alert>}
 
-      <TextField
-        fullWidth
-        label={translations.email}
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        margin="normal"
-      />
-      {isCreatingAccount && (
+      <form onSubmit={handleSubmit}>
         <TextField
           fullWidth
-          label={translations.name}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          label={translations.email}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           margin="normal"
         />
-      )}
-      <TextField
-        fullWidth
-        label={translations.password}
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        margin="normal"
-      />
-      {isCreatingAccount && (
+        {isCreatingAccount && (
+          <TextField
+            fullWidth
+            label={translations.name}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            margin="normal"
+          />
+        )}
         <TextField
           fullWidth
-          label={translations.confirmPassword}
+          label={translations.password}
           type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           margin="normal"
         />
-      )}
+        {isCreatingAccount && (
+          <TextField
+            fullWidth
+            label={translations.confirmPassword}
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            margin="normal"
+          />
+        )}
 
-      <Button
-        fullWidth
-        variant="contained"
-        color="primary"
-        sx={{ mt: 2 }}
-        onClick={isCreatingAccount ? handleCreateAccount : handleLogin}
-      >
-        {isCreatingAccount ? translations.createAccount : translations.login}
-      </Button>
+        <Button
+          fullWidth
+          variant="contained"
+          color="primary"
+          sx={{ mt: 2 }}
+          type="submit"
+        >
+          {isCreatingAccount ? translations.createAccount : translations.login}
+        </Button>
+      </form>
 
       <Typography textAlign="center" sx={{ mt: 2, cursor: 'pointer' }} onClick={handleSwitchMode}>
         {isCreatingAccount ? translations.switchToLogin : translations.switchToSignUp}

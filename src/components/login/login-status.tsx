@@ -2,17 +2,21 @@
 
 import LoginForm from './login-form';
 import LogoutForm from './logout-form';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface LoginStatusProps {
   translations: Record<string, string>;
 }
 
 const LoginStatus: React.FC<LoginStatusProps> = ({ translations }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState<string | null>(null);
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isLogoutFormOpen, setIsLogoutFormOpen] = useState(false);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('currentUser');
+    setUsername(storedUser);
+  }, []);
 
   const handleOpenLoginForm = () => setIsLoginFormOpen(true);
   const handleCloseLoginForm = () => setIsLoginFormOpen(false);
@@ -20,10 +24,9 @@ const LoginStatus: React.FC<LoginStatusProps> = ({ translations }) => {
   const handleCloseLogoutForm = () => setIsLogoutFormOpen(false);
 
   const handleClickStatus = () => {
-    if (!isLoggedIn) {
+    if (!username) {
       handleOpenLoginForm();
-    }
-    else{
+    } else {
       if (isLogoutFormOpen) {
         handleCloseLogoutForm();
       } else {
@@ -33,21 +36,23 @@ const LoginStatus: React.FC<LoginStatusProps> = ({ translations }) => {
   };
 
   const dummyLogin = (username: string) => { 
-    setIsLoggedIn(true);
     setUsername(username);
+    localStorage.setItem('currentUser', username);
     setIsLoginFormOpen(false);
+    window.location.reload();
   };
 
   const dummyLogout = () => {
-    setIsLoggedIn(false);
-    setUsername('');
+    setUsername(null);
+    localStorage.removeItem('currentUser');
     setIsLogoutFormOpen(false);
+    window.location.reload();
   };
 
   return (
     <>
       <label onClick={handleClickStatus} style={{ cursor: 'pointer' }}>
-        {isLoggedIn ? (
+        {username ? (
           <p>{translations.greetingUser} {username}!</p>
         ) : (
           <p>{translations.greetingGuest}</p>
@@ -59,7 +64,7 @@ const LoginStatus: React.FC<LoginStatusProps> = ({ translations }) => {
       )}
 
       {isLogoutFormOpen && (
-        <LogoutForm translations={translations} onConfirm={dummyLogout}/>
+        <LogoutForm translations={translations} onConfirm={dummyLogout} />
       )}
     </>
   );
