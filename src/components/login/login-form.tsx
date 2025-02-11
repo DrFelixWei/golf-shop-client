@@ -10,6 +10,12 @@ interface LoginFormProps {
   onConfirm: (username: string) => void;
 }
 
+interface User {
+  email: string;
+  name: string;
+  password: string;
+}
+
 const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm }) => {
   const [isCreatingAccount, setIsCreatingAccount] = useState(false);
   const [email, setEmail] = useState('');
@@ -31,7 +37,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm 
 
   const handleLogin = () => {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find((user: any) => user.email === email && user.password === password);
+    const user = users.find((user: User) => user.email === email && user.password === password);
 
     if (user) {
       setSuccessMessage(translations.loginSuccess);
@@ -55,7 +61,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ translations, onClose, onConfirm 
 
     const users = JSON.parse(localStorage.getItem('users') || '[]');
 
-    if (users.some((user: any) => user.email === email)) {
+    if (users.some((user: User) => user.email === email)) {
       setErrorMessage(translations.duplicateEmail);
       return;
     }
