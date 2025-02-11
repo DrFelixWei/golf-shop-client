@@ -29,6 +29,21 @@
   },
   "Login": {
     "greetingGuest": "Bonjour, connectez-vous",
-    "greetingUser": "Bon retour {name}!"
+    "greetingUser": "Bon retour",
+    "loginSuccess": "Connexion réussie !",
+    "invalidEmailPass": "Email ou mot de passe invalide.",
+    "passMismatch": "Les mots de passe ne correspondent pas.",
+    "passLength": "Le mot de passe doit comporter au moins 6 caractères.",
+    "duplicateEmail": "L'email existe déjà.",
+    "accountCreated": "Compte créé avec succès !",
+    "createAccount": "Créer un compte",
+    "login": "Connexion",
+    "email": "Email",
+    "name": "Nom",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmez le mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "switchToLogin": "Vous avez déjà un compte ? Connectez-vous",
+    "switchToSignup": "Vous n'avez pas de compte ? Inscrivez-vous"
   }
 }

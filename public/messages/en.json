@@ -29,6 +29,21 @@
   },
   "Login": {
     "greetingGuest": "Hello, sign in",
-    "greetingUser": "Welcome back {name}!"
+    "greetingUser": "Welcome back",
+    "loginSuccess": "Login successful!",
+    "invalidEmailPass": "Invalid email or password.",
+    "passMismatch": "Passwords do not match.",
+    "passLength": "Password must be at least 6 characters long.",
+    "duplicateEmail" : "Email already exists.",
+    "accountCreated": "Account created successfully!",
+    "createAccount": "Create an account",
+    "login": "Login",
+    "email": "Email",
+    "name" : "Name",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot password?",
+    "switchToLogin" : "Already have an account? Login",
+    "switchToSignup" : "Don't have an account? Sign up"
   }
 }

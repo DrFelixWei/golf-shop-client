@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import LocalSwitcher from './local-switcher';
 import ThemeSwitcher from './theme-switcher';
-import LoginStatus from './login/login-status'
+import Login from './login/login'
 import CartIcon from './cart/cartIcon';
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
           <LocalSwitcher />
           <ThemeSwitcher />
 
-          <LoginStatus/>
+          <Login/>
           <CartIcon/>
         </div>
       </nav>
